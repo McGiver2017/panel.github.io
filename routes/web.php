@@ -33,3 +33,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/usuarios','UserController');
+Route::resource('/comunicados','ComunicadoController');
+Route::resource('/notas-de-prensa','NotasprensaController');

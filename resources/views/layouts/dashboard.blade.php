@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="App" class="wrapper">
-        <div class="sidebar" data-color="orange" data-image="{{ asset('img/sidebar-5.jpg') }}">
+        <div class="sidebar" data-color="purple" data-image="{{ asset('img/sidebar-5.jpg') }}">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -75,31 +75,55 @@
                             [
                                 'label' => 'Registrar',
                                 'shor' => 'R',
-                                'ruta' => '/'
+                                'ruta' => '/usuarios/create'
                             ],
                             [
                                 'label' => 'Mostrar',
                                 'shor' => 'M',
-                                'ruta' => '/'
+                                'ruta' => '/usuarios'
+                            ]   
+                        ]
+                        
+                    ];
+                    $comunicados = [
+                        'ruta' => '/comunicados',
+                        'label' => 'Comunicados',
+                        'id' => 'comunicados',
+                        'icono' => 'nc-icon nc-chart-pie-35',
+                        'submenu' => [
+                            [
+                                'label' => 'Crear',
+                                'shor' => 'R',
+                                'ruta' => '/comunicados/create'
+                            ],
+                            [
+                                'label' => 'Mostrar',
+                                'shor' => 'M',
+                                'ruta' => '/comunicados'
                             ]   
                         ]
                         
                     ];
                     $notas = [
-                        'ruta' => '/notas',
+                        'ruta' => '/notas-de-prensa',
                         'label' => 'Notas de prensa',
-                        'id' => 'notas_prensa',
+                        'id' => 'notasprensa',
                         'icono' => 'nc-icon nc-chart-pie-35',
                         'submenu' => [
-                             [
-                                'label' => 'Registrar',
+                            [
+                                'label' => 'Crear',
                                 'shor' => 'R',
-                                'ruta' => '/'
+                                'ruta' => '/notas-de-prensa/create'
+                            ],
+                            [
+                                'label' => 'Mostrar',
+                                'shor' => 'M',
+                                'ruta' => '/notas-de-prensa'
                             ]   
                         ]
                         
                     ];
-                $rutas = [$usuarios,$notas  
+                $rutas = [$usuarios,$notas,$comunicados  
                     ];
                 @endphp
                 
@@ -295,5 +319,6 @@
         }, 700)
     });
 </script>
+@yield('script')
 </body>
 </html>
