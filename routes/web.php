@@ -15,9 +15,7 @@ use App\Mail\Welcome;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'paginawebController@index');
 Route::get('welcome',function(){
     Mail::to('xmcgiver12@gmail.com','McGiver')
         ->send(new Welcome);
@@ -36,3 +34,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/usuarios','UserController');
 Route::resource('/comunicados','ComunicadoController');
 Route::resource('/notas-de-prensa','NotasprensaController');
+
+//
+
+Route::get('/ugelcp', 'paginawebController@ugelcp');
+Route::get('/entidad', 'paginawebController@entidad');
+Route::get('/entidad/normativa', 'paginawebController@normativa');
+Route::get('/entidad/archivo', 'paginawebController@archivo');
+Route::get('/funcionarios', 'paginawebController@funcionarios');
+Route::get('/direccion', 'paginawebController@direccion');
+Route::get('/agp', 'paginawebController@agp');
+Route::get('/agi', 'paginawebController@agi');

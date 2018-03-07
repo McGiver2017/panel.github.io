@@ -1,0 +1,15 @@
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+// Fonts
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,300,700");
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+
+.bordes {
+    -webkit-box-shadow:0px 4px 12px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow:0px 4px 12px 4px rgba(0,0,0,0.75);
+    box-shadow:0px 4px 12px 4px rgba(0,0,0,0.75);
+    background: #F0F0F0;
+  }
+  
+ 

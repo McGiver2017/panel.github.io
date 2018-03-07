@@ -1,4 +1,6 @@
 {
+    "/paper-kit2/js/appPaperKit2.js": "/paper-kit2/js/appPaperKit2.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/paper-kit2/css/appPaperKit2.css": "/paper-kit2/css/appPaperKit2.css"
 }
