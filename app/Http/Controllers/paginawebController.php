@@ -31,8 +31,44 @@ class paginawebController extends Controller
     public function direccion(){
         return view('paginaIndex.direccion');
     }
+    public function agp(){
+        return view('paginaIndex.agp');
+    }
     public function agi(){
         return view('paginaIndex.agi');
+    }
+    public function administracion(){
+        return view('paginaIndex.administracion');
+    }
+    public function abastecimimento(){
+        return abort(404);
+    }
+    public function bienestar(){
+        return view('paginaIndex.bienestar');
+    }
+    public function personal(){
+        return view('paginaIndex.personal');
+    }
+    public function contabilidad(){
+        return view('paginaIndex.contabilidad');
+    }
+    public function escalafon(){
+        return view('paginaIndex.escalafon');
+    }
+    public function infraestructura(){
+        return view('paginaIndex.infraestructura');
+    }
+    public function remuneraciones(){
+        return view('paginaIndex.remuneraciones');
+    }
+    public function tesoreria(){
+        return view('paginaIndex.tesoreria');
+    }
+    public function oci(){
+        return view('paginaIndex.oci');
+    }
+    public function transparencia(){
+        return view('paginaIndex.transparencia');
     }
 
 }

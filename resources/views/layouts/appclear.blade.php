@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="d-flex">
-            <img src="{{ asset('ugel/img/logo.png')}}" class="img-fluid d-flex m-auto" />
+            <img src="{{ asset('ugel/img/logo_2016.png')}}" class="img-fluid d-flex m-auto" />
         </div>
         <nav class="navbar navbar-expand-md bg-danger ">
             <div class="container">
@@ -45,6 +45,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
+                    <li role="presentation" class="nav-item active"><a href="{{ url('/') }}" class="btn btn-round">Inicio</a></li>
+                    
                         <li class="nav-item dropdown">
                             <button href="#paper-kit" class="dropdown-toggle btn btn-round" data-toggle="dropdown" aria-expanded="false">DATOS <b class="caret"></b></button>
                             <ul class="dropdown-menu dropdown-menu-right">
@@ -53,16 +55,29 @@
                                 <a class="dropdown-item" href="{{ url('/entidad') }}">Entidad</a>
                                 <a class="dropdown-item" href="{{ url('/funcionarios') }}">Funcionarios</a>
                             </ul>
-                        </li>
+                        </li>                        
                         <li class="nav-item dropdown">
                             <button href="#paper-kit" class="dropdown-toggle btn btn-round" data-toggle="dropdown" aria-expanded="false">OFICINAS <b class="caret"></b></button>
+                            
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-header">Lista de opciones</div>
                                 <a class="dropdown-item" href="{{ url('/direccion') }}">Dirección</a>
                                 <a class="dropdown-item" href="{{ url('/agp') }}">Gestión Pedagogica</a>
                                 <a class="dropdown-item" href="{{ url('/agi') }}">Gestión Institucional</a>
+                                <a class="dropdown-item" href="{{ url('/administracion') }}">Administración</a>
+                                <a class="dropdown-item" href="{{ url('/abastecimimento') }}">Abastecimiento</a>
+                                <a class="dropdown-item" href="{{ url('/bienestar') }}">Bienestar Social</a>
+                                <a class="dropdown-item" href="{{ url('/contabilidad') }}">Contabilidad</a>
+                                <a class="dropdown-item" href="{{ url('/personal') }}">Personal</a>
+                                <a class="dropdown-item" href="{{ url('/escalafon') }}">Escalafón</a>
+                                <a class="dropdown-item" href="{{ url('/infraestructura') }}">Infraestructura</a>
+                                <a class="dropdown-item" href="{{ url('/remuneraciones') }}">Remuneraciones</a>
+                                <a class="dropdown-item" href="{{ url('/tesoreria') }}">Tesoreria</a>
+                                <a class="dropdown-item" href="{{ url('/oci') }}">Oficina de Control Interno</a>
+                                
                             </ul>
                         </li>
+                        <li role="presentation" class="nav-item"><a href="{{ url('/transparencia') }}" class="btn btn-round">Transparencia</a></li>
                     </ul>
                     
                 </div>
