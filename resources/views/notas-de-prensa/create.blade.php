@@ -8,7 +8,7 @@
                 @include('usuarios.header',$datos)
             </div>
             <div class="card-body">                
-    @include('usuarios.form',['objeto'=>$objeto,'url'=>'/usuarios','method' => 'POST'])
+                @include('notas-de-prensa.form',['objeto'=>$objeto,'url'=>'/notas-de-prensa','method' => 'POST'])
             </div>
         </div>
     </div>

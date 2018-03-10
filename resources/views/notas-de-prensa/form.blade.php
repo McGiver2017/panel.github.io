@@ -1,50 +1,51 @@
-{!! Form::open(['url'=>$url,'method' => $method]) !!}
+{!! Form::open(['url'=>$url,'method' => $method , 'files' => true]) !!}
 @if ($errors->all())
     <div class="alert alert-danger">
     <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
         <i class="nc-icon nc-simple-remove"></i>
     </button>
     <span>
-        <ul>            
-            @foreach($errors->all() as $error)  
+        <ul>
+            @foreach($errors->all() as $error)
             <li>
                 <strong>{{ $error}}</strong>
             </li>
-            @endforeach  
-        </ul>  
-    </span>        
+            @endforeach
+        </ul>
+    </span>
     </div>
 @endif
-        <div class="form-group has-label">        
+        <div class="form-group has-label">
         <label>
-            Nombre
+            Titulo
             <star class="star">*</star>
         </label>
-        {!! Form::text('name', $objeto->title, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...']) !!}
-        
+        {!! Form::text('titulo', $objeto->titulo, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...']) !!}
+
         </div>
-        <div class="form-group has-label">        
+        <div class="form-group has-label">
         <label>
-            Correo Electronico
+            Cuerpo
             <star class="star">*</star>
-        </label>       
-        {!! Form::email('email', $objeto->pricing, ['class'=>'form-control','placeholder'=>'Ingrese su correo electronico...']) !!}
+        </label>
+            {!! Form::textarea('cuerpo', $objeto->cuerpo, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...']) !!}
         </div>
-        <div class="form-group has-label">        
-        <label>
-            Contraseña
-            <star class="star">*</star>
-        </label>       
-        {!! Form::password('password', ['class'=>'form-control','placeholder'=>'Ingrese su contraseña']) !!}
+        <div class="form-group has-label">
+            <label>
+                Fecha
+                <star class="star">*</star>
+            </label>
+            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
         </div>
-        <div class="form-group has-label">        
-        <label>
-            Repita su contraseña
-            <star class="star">*</star>
-        </label>        
-        {!! Form::password('password_confirmation', ['class'=>'form-control','placeholder'=>'Vuelva a Ingresar su contraseña']) !!}
+        <div class="form-group has-label">
+            <label>
+                Ruta de imagen
+                <star class="star">*</star>
+            </label>
+            {!! Form::file('imagen', $objeto->imagen, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
         </div>
-        <div class="form-group text-right">        
-        <a href="{{url('/usuarios')}}">Regresar al listado de producto</a></div>
+
+        <div class="form-group text-right">
+        <a href="{{url('/notas-de-prensa')}}">Regresar al listado de producto</a></div>
         <input type="submit" value="Enviar" class="btn btn-success">
 {!! Form::close() !!}

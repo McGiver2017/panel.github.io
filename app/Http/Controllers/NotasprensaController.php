@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\notasprensa as tabla_principal;
+use App\notasprensa;
 use Illuminate\Http\Request;
 
 class NotasprensaController extends Controller
@@ -31,7 +32,9 @@ class NotasprensaController extends Controller
      */
     public function create()
     {
-        //
+        $objeto = new notasprensa();
+        $datos = $this->generarHeader('crear');
+        return view($this->ruta.'.create',['objeto'=>$objeto,'datos'=> $datos]);
     }
 
     /**
@@ -42,7 +45,14 @@ class NotasprensaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $imagen = $request->file('imagen');
+        tabla_principal::create([
+            'titulo' => $request->input('titulo'),
+            'cuerpo' => $request->input('cuerpo'),
+            'fecha' => $request->input('fecha'),
+            'imagen' => $imagen->store('notas','public')
+        ]);
+        return redirect('/notas-de-prensa');
     }
 
     /**

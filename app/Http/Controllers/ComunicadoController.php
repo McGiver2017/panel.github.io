@@ -31,7 +31,9 @@ class ComunicadoController extends Controller
      */
     public function create()
     {
-        //
+        $objeto = new tabla_principal();
+        $datos = $this->generarHeader('crear');
+        return view($this->ruta.'.create',['objeto'=>$objeto,'datos'=> $datos]);
     }
 
     /**
@@ -42,7 +44,10 @@ class ComunicadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $crear = tabla_principal::create($request->all());
+        if ($crear){
+            redirect('comunicados');
+        }
     }
 
     /**

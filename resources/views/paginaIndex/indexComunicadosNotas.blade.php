@@ -13,7 +13,12 @@
                         <div class="card-body">
                             <h6 class="card-category"></h6>
                             <h4 class="card-title">Comunicado {{$comunicado->id}}</h4>
-                            <p class="card-description">{{$comunicado->fecha.'. '.$comunicado->descripcion}} Se comunica a los postulantes al Magisterio, que el día de mañana Jueves 01 de Marzo del presente año, a horas 04:00 pm; se llevará a cabo la adjudicación de las plazas generadas por diferentes motivos de acuerdo al orden de mérito.</p>
+                            <p class="">
+                                <?php
+                                echo $comunicado->fecha.'. '.$comunicado->descripcion;
+                                ?>
+
+                            </p>
                         </div>
                     </div> <!-- end card -->
                 </div>

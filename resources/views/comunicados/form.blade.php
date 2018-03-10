@@ -1,50 +1,41 @@
-{!! Form::open(['url'=>$url,'method' => $method]) !!}
+{!! Form::open(['url'=>$url,'method' => $method , 'files' => true]) !!}
 @if ($errors->all())
     <div class="alert alert-danger">
     <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
         <i class="nc-icon nc-simple-remove"></i>
     </button>
     <span>
-        <ul>            
-            @foreach($errors->all() as $error)  
+        <ul>
+            @foreach($errors->all() as $error)
             <li>
                 <strong>{{ $error}}</strong>
             </li>
-            @endforeach  
-        </ul>  
-    </span>        
+            @endforeach
+        </ul>
+    </span>
     </div>
 @endif
-        <div class="form-group has-label">        
+        <div class="form-group has-label">
         <label>
-            Nombre
+            Descripción
             <star class="star">*</star>
         </label>
-        {!! Form::text('name', $objeto->title, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...']) !!}
-        
+        {!! Form::textarea('descripcion', $objeto->descripcion, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...','id'=>'descripcion']) !!}
+
         </div>
-        <div class="form-group has-label">        
-        <label>
-            Correo Electronico
-            <star class="star">*</star>
-        </label>       
-        {!! Form::email('email', $objeto->pricing, ['class'=>'form-control','placeholder'=>'Ingrese su correo electronico...']) !!}
+        <div class="form-group has-label">
+            <label>
+                Fecha
+                <star class="star">*</star>
+            </label>
+            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
         </div>
-        <div class="form-group has-label">        
-        <label>
-            Contraseña
-            <star class="star">*</star>
-        </label>       
-        {!! Form::password('password', ['class'=>'form-control','placeholder'=>'Ingrese su contraseña']) !!}
-        </div>
-        <div class="form-group has-label">        
-        <label>
-            Repita su contraseña
-            <star class="star">*</star>
-        </label>        
-        {!! Form::password('password_confirmation', ['class'=>'form-control','placeholder'=>'Vuelva a Ingresar su contraseña']) !!}
-        </div>
-        <div class="form-group text-right">        
-        <a href="{{url('/usuarios')}}">Regresar al listado de producto</a></div>
+
+        <div class="form-group text-right">
+        <a href="{{url('/comunicados')}}">Regresar al listado de producto</a></div>
         <input type="submit" value="Enviar" class="btn btn-success">
 {!! Form::close() !!}
+<script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'descripcion' );
+</script>
