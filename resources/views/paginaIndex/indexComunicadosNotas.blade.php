@@ -1,5 +1,4 @@
 @extends('layouts.appclear')
-
 @section('content')
 @include('paginaIndex.indexCarousel')
 @include('paginaIndex.indexFeature')

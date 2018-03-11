@@ -8,7 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>UGEL DE CORONEL PORTILLO</title>
+    <link href="favicon.ico" rel="shortcut icon">
 
     <!-- Styles <link href="{{ asset('paper-kit2/css/bootstrap.min.css') }}" rel="stylesheet"/> <link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -110,6 +111,15 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                         </li>
                         <li role="presentation" class="nav-item"><a href="{{ url('/transparencia') }}" class="btn btn-round">Transparencia</a></li>
                         <li role="presentation" class="nav-item"><a href="{{ url('/reclamo-quejas') }}" class="btn btn-round">Relamos/Quejas</a></li>
+                        <li role="presentation" class="nav-item">
+                            <!-- Inicio Reloj -->
+                            <button href="http://time.is/Pucallpa" id="time_is_link" rel="nofollow" style="font-size:12px" class="btn btn-round" disabled><span id="Pucallpa_z14d" ></span></button>
+
+                            <script src="http://widget.time.is/t.js"></script>
+                            <script>
+                                time_is_widget.init({Pucallpa_z14d:{time_format:"12hours:minutes:secondsAMPM"}});
+                            </script><!-- Fin Reloj -->
+                        </li>
                     </ul>
                     
                 </div>

@@ -32,7 +32,7 @@
                 </div>
                 <div class="user">
                     <div class="photo">
-                        <img src="{{ asset('img/default-avatar.png') }}" />
+                        <img src="{{ asset('ugel/img/logo/user.png') }}" />
                     </div>
                     <div class="info ">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -138,7 +138,7 @@
 
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="./dashboard.html">
+                        <a class="nav-link" href="/">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -181,7 +181,7 @@
                                 <i class="fa fa-navicon visible-on-sidebar-mini"></i>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="#pablo"> Dashboard PRO </a>
+                        <a class="navbar-brand" href="#pablo"> Panel de Control</a>
                     </div>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -236,23 +236,23 @@
                         <nav>
                             <ul class="footer-menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ url('/home') }}">
                                         Home
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        Company
+                                    <a href="{{ url('/usuarios') }}">
+                                        Usuarios
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        Portfolio
+                                    <a href="{{ url('/notas-de-prensa') }}">
+                                        Notas de prensa
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        Blog
+                                    <a href="{{ url('/comunicados') }}">
+                                        Comunicado
                                     </a>
                                 </li>
                             </ul>
@@ -261,7 +261,7 @@
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script>
-                                <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                               Derechos Reservados
                             </p>
                         </nav>
                     </div>
