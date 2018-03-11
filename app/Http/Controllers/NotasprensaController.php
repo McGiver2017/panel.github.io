@@ -61,9 +61,11 @@ class NotasprensaController extends Controller
      * @param  \App\notasprensa  $notasprensa
      * @return \Illuminate\Http\Response
      */
-    public function show(notasprensa $notasprensa)
+    public function show($id)
     {
-        //
+        $objeto = tabla_principal::find($id);
+        $datos = $this->generarHeader('ver');
+        return view($this->ruta.'.show',['objeto'=>$objeto,'datos'=> $datos]);
     }
 
     /**
@@ -72,9 +74,11 @@ class NotasprensaController extends Controller
      * @param  \App\notasprensa  $notasprensa
      * @return \Illuminate\Http\Response
      */
-    public function edit(notasprensa $notasprensa)
+    public function edit($id)
     {
-        //
+        $objeto = notasprensa::find($id);
+        $datos = $this->generarHeader('editar');
+        return view($this->ruta.'.edit',['objeto'=>$objeto,'datos'=> $datos]);
     }
 
     /**
@@ -84,9 +88,24 @@ class NotasprensaController extends Controller
      * @param  \App\notasprensa  $notasprensa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, notasprensa $notasprensa)
+    public function update(Request $request, $id)
     {
-        //
+        $imagen = $request->file('imagen');
+        $guardar = null;
+        $tabla = tabla_principal::find($id);
+        if ($imagen){
+            $guardar = $imagen->store('notas','public');
+        }
+        else{
+            $guardar = $tabla->imagen;
+        }
+        tabla_principal::updateOrCreate(['id' => $id],[
+            'titulo' => $request->input('titulo'),
+            'cuerpo' => $request->input('cuerpo'),
+            'fecha' => $request->input('fecha'),
+            'imagen' => $guardar
+        ]);
+        return redirect('/notas-de-prensa');
     }
 
     /**
@@ -95,8 +114,9 @@ class NotasprensaController extends Controller
      * @param  \App\notasprensa  $notasprensa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(notasprensa $notasprensa)
+    public function destroy($id)
     {
-        //
+        $eliminar = tabla_principal::destroy($id);
+        return redirect('/notas-de-prensa');
     }
 }

@@ -25,14 +25,45 @@
     <header>
         <div class="row mt-2 mb-2">
             <div class="col-md-6 text-center">
-                <span><strong>Última actualización 10/07/2017</strong>Copyright Ugel - Coronel Portillo 2017 - Oficina de Sistemas</span>
+                <span><strong>
+
+                        <script language="JavaScript" type="text/javascript">
+<!--
+// last modified script by Bernhard Friedrich; should work in all browsers
+var a;
+a=new Date(document.lastModified);
+lm_year=a.getYear();
+if (lm_year<1000){                  //just in case date is delivered with 4 digits
+    if (lm_year<70){
+        lm_year=2000+lm_year;
+    }
+    else lm_year=1900+lm_year;
+}                                 //end workaround
+lm_month=a.getMonth()+1;
+if (lm_month<10){
+    lm_month='0'+lm_month;
+}
+lm_day=a.getDate();
+if (lm_day<10){
+    lm_day='0'+lm_day;
+}
+document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
+// -->
+</script>
+                    </strong>Copyright Ugel - Coronel Portillo 2018 - Oficina de Sistemas</span>
             </div>
             <div class="col-md-6 text-center">
-                <span><strong>&quot;AÑO DEL BUEN SERVICIO AL CIUDADANO&quot; -</strong>11 de Julio de 2017</span>
+                <span><strong>&quot;AÑO DEL DIÁLOGO Y LA RECONCILIACIÓN NACIONAL&quot; -</strong>
+                 <script>
+                    var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                    var f=new Date();
+                    document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+                </script>
+                </span>
             </div>
         </div>
         <div class="d-flex">
-            <img src="{{ asset('ugel/img/logo_2016.png')}}" class="img-fluid d-flex m-auto" />
+            <img src="{{ asset('ugel/img/logo2018.png')}}" class="img-fluid d-flex m-auto" />
         </div>
         <nav class="navbar navbar-expand-md bg-danger ">
             <div class="container">
@@ -78,6 +109,7 @@
                             </ul>
                         </li>
                         <li role="presentation" class="nav-item"><a href="{{ url('/transparencia') }}" class="btn btn-round">Transparencia</a></li>
+                        <li role="presentation" class="nav-item"><a href="{{ url('/reclamo-quejas') }}" class="btn btn-round">Relamos/Quejas</a></li>
                     </ul>
                     
                 </div>
@@ -110,28 +142,28 @@
                             <div class="links">
                                 <ul class="uppercase-links stacked-links">
                                     <li>
-                                        <a href="#paper-kit">
+                                        <a href="{{ url('/') }}">
                                             Home
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#paper-kit">
-                                            Discover
+                                        <a href="{{ url('/direccion') }}">
+                                            Dirección
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#paper-kit">
-                                            Blog
+                                        <a href="{{ url('/ugelcp') }}">
+                                            Datos de UGEL
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#paper-kit">
-                                            Live Support
+                                        <a href="{{ url('/entidad') }}">
+                                            Entidad
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#paper-kit">
-                                            Money Back
+                                        <a href="{{ url('/transparencia') }}">
+                                            Transparencia
                                         </a>
                                     </li>
                                 </ul>

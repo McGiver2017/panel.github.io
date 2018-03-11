@@ -23,11 +23,11 @@
     -->
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                        Ct
+                    <a href="/" class="simple-text logo-mini">
+                        SC
                     </a>
-                    <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                        Creative Tim
+                    <a href="/" class="simple-text logo-normal">
+                        Sist. de Control
                     </a>
                 </div>
                 <div class="user">
@@ -36,29 +36,23 @@
                     </div>
                     <div class="info ">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                            <span>Tania Andrew
+                            <span>{{ substr(Auth::user()->name,0,10) }}
                                 <b class="caret"></b>
                             </span>
                         </a>
                         <div class="collapse" id="collapseExample">
                             <ul class="nav">
                                 <li>
-                                    <a class="profile-dropdown" href="#pablo">
-                                        <span class="sidebar-mini">MP</span>
-                                        <span class="sidebar-normal">My Profile</span>
+                                    <a href="{{ route('logout') }}" class="profile-dropdown"
+                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        <span class="sidebar-mini">L</span>
+                                        <span class="sidebar-normal">Logout</span>
                                     </a>
-                                </li>
-                                <li>
-                                    <a class="profile-dropdown" href="#pablo">
-                                        <span class="sidebar-mini">EP</span>
-                                        <span class="sidebar-normal">Edit Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="profile-dropdown" href="#pablo">
-                                        <span class="sidebar-mini">S</span>
-                                        <span class="sidebar-normal">Settings</span>
-                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -123,7 +117,21 @@
                         ]
                         
                     ];
-                $rutas = [$usuarios,$notas,$comunicados  
+                    $quejas_relamos = [
+                        'ruta' => '/mensajes',
+                        'label' => 'Mensajes',
+                        'id' => 'quejas-reclamos',
+                        'icono' => 'nc-icon nc-chart-pie-35',
+                        'submenu' => [
+                            [
+                                'label' => 'Mostrar',
+                                'shor' => 'M',
+                                'ruta' => '/mensajes'
+                            ]
+                        ]
+
+                    ];
+                $rutas = [$usuarios,$notas,$comunicados,$quejas_relamos
                     ];
                 @endphp
                 

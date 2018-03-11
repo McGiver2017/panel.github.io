@@ -9,9 +9,10 @@ use App\notasprensa;
 class paginawebController extends Controller
 {
     public function index(){
-        $comunicados = comunicado::paginate(10);
-        $notas = notasprensa::paginate(10);
-        return view('paginaIndex.indexComunicadosNotas',['comunicados' => $comunicados,'notas' => $notas]);
+        $comunicados = comunicado::paginate(8);
+        $notas = notasprensa::paginate(8);
+        $comunicadoModal = comunicado::paginate(3);
+        return view('paginaIndex.indexComunicadosNotas',['comunicados' => $comunicados,'notas' => $notas,'comunicadosModal' => $comunicadoModal]);
     }
     public function ugelcp(){
         return view('paginaIndex.ugelcp');
@@ -69,6 +70,9 @@ class paginawebController extends Controller
     }
     public function transparencia(){
         return view('paginaIndex.transparencia');
+    }
+    public function reclamo_quejas(){
+        return view('paginaIndex.reclamo-quejas');
     }
 
 }

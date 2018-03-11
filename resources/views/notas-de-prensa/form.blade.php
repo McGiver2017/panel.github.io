@@ -42,10 +42,15 @@
                 Ruta de imagen
                 <star class="star">*</star>
             </label>
-            {!! Form::file('imagen', $objeto->imagen, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
+            {!! Form::file('imagen', null, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...', 'type'=>'file', 'accept'=>'image/*']) !!}
         </div>
 
         <div class="form-group text-right">
         <a href="{{url('/notas-de-prensa')}}">Regresar al listado de producto</a></div>
         <input type="submit" value="Enviar" class="btn btn-success">
 {!! Form::close() !!}
+
+<script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'cuerpo' );
+</script>

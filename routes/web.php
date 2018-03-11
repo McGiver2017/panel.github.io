@@ -34,7 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/usuarios','UserController');
 Route::resource('/comunicados','ComunicadoController');
 Route::resource('/notas-de-prensa','NotasprensaController');
-
+Route::resource('/mensajes','MensajedocController');
 //
 
 Route::get('/ugelcp', 'paginawebController@ugelcp');
@@ -55,3 +55,4 @@ Route::get('/remuneraciones', 'paginawebController@remuneraciones');
 Route::get('/tesoreria', 'paginawebController@tesoreria');
 Route::get('/oci', 'paginawebController@oci');
 Route::get('/transparencia', 'paginawebController@transparencia');
+Route::get('/reclamo-quejas', 'paginawebController@reclamo_quejas');

@@ -49,18 +49,29 @@
                                 </div>
                             </div>
                         
-                            </div>
+                        </div>
                     </div> <!-- end card -->
                 </div>
                 @endforeach
-            </div>
         </div>
-        <div class="mt-2 mx-auto">
-            @if(count($comunicados))
-                        {{ $comunicados->links() }}
-                    @endif  
-        </div>
-        
     </div>
+    <div class="mt-2 mx-auto">
+        @if(count($comunicados))
+            {{ $comunicados->links() }}
+        @endif
+    </div>
+</div>
+    @include('paginaIndex.modal')
     @include('paginaIndex.indexEnlacesDestacadados')
+
 @endsection
+@section('script')
+    <script>
+        $(document).ready(
+            function () {
+                $('#noticeModal').modal('show');
+            }
+        )
+    </script>
+    @endsection
+

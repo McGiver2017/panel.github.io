@@ -19,9 +19,12 @@
                     <thead>
                         <th data-field="state" data-checkbox="true"></th>
                         <th data-field="id" class="text-center">ID</th>
-                        <th data-field="titulo" data-sortable="true">Titulo</th>
-                        <th data-field="cuerpo" data-sortable="true">Cuerpo</th>
-                        <th data-field="fecha" data-sortable="true">Fecha</th>
+                        <th data-field="nombres" data-sortable="true">Nombres</th>
+                        <th data-field="apellidos" data-sortable="true">Apellidos</th>
+                        <th data-field="correo" data-sortable="true">Correo</th>
+                        <th data-field="tipo" data-sortable="true">Tipo</th>
+                        <th data-field="asunto " data-sortable="true">Asunto</th>
+                        <th data-field="estado " data-sortable="true">Estado</th>
                         <th data-field="actions" class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
                     </thead>
                     <tbody>
@@ -29,9 +32,12 @@
                         <tr>
                             <td></td>
                             <td>{{ $lista->id }}</td>
-                            <td>{{ $lista->titulo}}</td>
-                            <td>{{ $lista->cuerpo}}</td>
-                            <td>{{ $lista->fecha}}</td>
+                            <td>{{ $lista->nombres}}</td>
+                            <td>{{ $lista->apellidos}}</td>
+                            <td>{{ $lista->correo}}</td>
+                            <td>{{ $lista->tipo}}</td>
+                            <td>{{ $lista->asunto}}</td>
+                            <td>{{ $lista->estado}}</td>
                             <td></td>
                         </tr>
                         @endforeach
@@ -62,10 +68,10 @@
     $().ready(function() {
         window.operateEvents = {
             'click .view': function(e, value, row, index) {
-                location.href ="/notas-de-prensa/"+row.id;
+                location.href ="/mensajes/"+row.id;
             },
             'click .edit': function(e, value, row, index) {
-                location.href ="/notas-de-prensa/"+row.id+"/edit";
+                location.href ="/comunicados/"+row.id+"/edit";
             },
             'click .remove': function(e, value, row, index) {
                 console.log(row);

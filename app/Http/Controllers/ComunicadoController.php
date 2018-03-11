@@ -46,7 +46,7 @@ class ComunicadoController extends Controller
     {
         $crear = tabla_principal::create($request->all());
         if ($crear){
-            redirect('comunicados');
+            return redirect('comunicados');
         }
     }
 
@@ -56,9 +56,11 @@ class ComunicadoController extends Controller
      * @param  \App\comunicados  $comunicados
      * @return \Illuminate\Http\Response
      */
-    public function show(comunicados $comunicados)
+    public function show($id)
     {
-        //
+        $objeto = tabla_principal::find($id);
+        $datos = $this->generarHeader('crear');
+        return view($this->ruta.'.show',['objeto'=>$objeto,'datos'=> $datos]);
     }
 
     /**
@@ -67,9 +69,11 @@ class ComunicadoController extends Controller
      * @param  \App\comunicados  $comunicados
      * @return \Illuminate\Http\Response
      */
-    public function edit(comunicados $comunicados)
+    public function edit($id)
     {
-        //
+        $objeto = tabla_principal::find($id);
+        $datos = $this->generarHeader('editar');
+        return view($this->ruta.'.edit',['objeto'=>$objeto,'datos'=> $datos]);
     }
 
     /**
@@ -79,9 +83,14 @@ class ComunicadoController extends Controller
      * @param  \App\comunicados  $comunicados
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, comunicados $comunicados)
+    public function update(Request $request, $id)
     {
-        //
+        $actualizar = tabla_principal::updateOrCreate(['id' => $id], $request->all());
+        if ($actualizar) {
+            return redirect('comunicados');
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -90,8 +99,9 @@ class ComunicadoController extends Controller
      * @param  \App\comunicados  $comunicados
      * @return \Illuminate\Http\Response
      */
-    public function destroy(comunicados $comunicados)
+    public function destroy($id)
     {
-        //
+        $eliminar = tabla_principal::destroy($id);
+        return redirect('/comunicados');
     }
 }
