@@ -17,40 +17,41 @@
 @endif
         <div class="form-group has-label">
         <label>
-            Titulo
+            Descripción
             <star class="star">*</star>
         </label>
-        {!! Form::text('titulo', $objeto->titulo, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...']) !!}
+        {!! Form::text('descripcion', $objeto->descripcion, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...']) !!}
 
         </div>
         <div class="form-group has-label">
         <label>
-            Cuerpo
+            Fecha de Convocatoria
             <star class="star">*</star>
         </label>
-            {!! Form::textarea('cuerpo', $objeto->cuerpo, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...']) !!}
+            {!! Form::date('fecha_convocatoria', $objeto->fecha_convocatoria, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...']) !!}
         </div>
         <div class="form-group has-label">
             <label>
-                Fecha
+                Base y Perfiles
                 <star class="star">*</star>
             </label>
-            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
+            {!! Form::textarea('bases_perfiles', $objeto->bases_perfiles, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
         </div>
         <div class="form-group has-label">
             <label>
-                Ruta de imagen
+                Resultados
                 <star class="star">*</star>
             </label>
-            {!! Form::file('imagen', null, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...', 'type'=>'file', 'accept'=>'image/*']) !!}
+            {!! Form::textarea('resultados', $objeto->resultados, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
         </div>
 
         <div class="form-group text-right">
-        <a href="{{url('/notas-de-prensa')}}">Regresar al listado de notas de prensa</a></div>
+        <a href="{{url('/notas-de-prensa')}}">Regresar al listado de producto</a></div>
         <input type="submit" value="Enviar" class="btn btn-success">
 {!! Form::close() !!}
 
 <script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace( 'cuerpo' );
+    CKEDITOR.replace( 'bases_perfiles' );
+    CKEDITOR.replace( 'resultados' );
 </script>

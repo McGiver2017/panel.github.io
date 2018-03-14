@@ -24,10 +24,10 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="/" class="simple-text logo-mini">
-                        SC
+                        CP
                     </a>
                     <a href="/" class="simple-text logo-normal">
-                        Sist. de Control
+                        UGEL CP
                     </a>
                 </div>
                 <div class="user">
@@ -131,7 +131,43 @@
                         ]
 
                     ];
-                $rutas = [$usuarios,$notas,$comunicados,$quejas_relamos
+                    $archivos = [
+                        'ruta' => '/archivos',
+                        'label' => 'Archivos',
+                        'id' => 'archivos-l',
+                        'icono' => 'nc-icon nc-chart-pie-35',
+                        'submenu' => [
+                            [
+                                'label' => 'Crear',
+                                'shor' => 'R',
+                                'ruta' => '/archivos/create'
+                            ],
+                            [
+                                'label' => 'Mostrar',
+                                'shor' => 'M',
+                                'ruta' => '/archivos'
+                            ]
+                        ]
+                    ];
+                    $convocatoria = [
+                        'ruta' => '/convocatoria',
+                        'label' => 'Convocatoria',
+                        'id' => 'convocatoria',
+                        'icono' => 'nc-icon nc-chart-pie-35',
+                        'submenu' => [
+                            [
+                                'label' => 'Crear',
+                                'shor' => 'R',
+                                'ruta' => '/convocatoria/create'
+                            ],
+                            [
+                                'label' => 'Mostrar',
+                                'shor' => 'M',
+                                'ruta' => '/convocatoria'
+                            ]
+                        ]
+                    ];
+                $rutas = [$usuarios,$notas,$comunicados,$quejas_relamos, $archivos, $convocatoria
                     ];
                 @endphp
                 

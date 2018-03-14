@@ -5,10 +5,10 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                @include('notas-de-prensa.header',$datos)
+                @include('carga-de-archivos.header',$datos)
             </div>
             <div class="card-body">                
-                @include('notas-de-prensa.form',['objeto'=>$objeto,'url'=>'/notas-de-prensa','method' => 'POST'])
+                @include('carga-de-archivos.form',['objeto'=>$objeto,'url'=>'/archivos','method' => 'POST'])
             </div>
         </div>
     </div>

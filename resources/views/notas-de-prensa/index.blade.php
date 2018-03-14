@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                @include('usuarios.header',$datos)
+                @include('notas-de-prensa.header',$datos)
             </div>            
         </div>
     </div>
@@ -52,9 +52,6 @@
             '</a>',
             '<a rel="tooltip" title="Edit" class="btn btn-link btn-warning table-action edit" href="javascript:void(0)">',
             '<i class="fa fa-edit"></i>',
-            '</a>',
-            '<a rel="tooltip" title="Remove" class="btn btn-link btn-danger table-action remove" href="javascript:void(0)">',
-            '<i class="fa fa-remove"></i>',
             '</a>'
         ].join('');
     }

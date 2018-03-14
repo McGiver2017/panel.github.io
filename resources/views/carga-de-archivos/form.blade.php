@@ -15,38 +15,31 @@
     </span>
     </div>
 @endif
-        <div class="form-group has-label">
-        <label>
-            Titulo
-            <star class="star">*</star>
-        </label>
-        {!! Form::text('titulo', $objeto->titulo, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...']) !!}
 
-        </div>
         <div class="form-group has-label">
         <label>
-            Cuerpo
+            Descripción
             <star class="star">*</star>
         </label>
-            {!! Form::textarea('cuerpo', $objeto->cuerpo, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...']) !!}
+            {!! Form::text('descripcion', $objeto->descripcion, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...']) !!}
         </div>
         <div class="form-group has-label">
             <label>
-                Fecha
+                Tipo de archivo
                 <star class="star">*</star>
             </label>
-            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
+            {!! Form::select('tipo', $tipo,$objeto->tipo,['class' => 'form-control']) !!}
         </div>
         <div class="form-group has-label">
             <label>
-                Ruta de imagen
+                Ruta de Archivo
                 <star class="star">*</star>
             </label>
-            {!! Form::file('imagen', null, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...', 'type'=>'file', 'accept'=>'image/*']) !!}
+            {!! Form::file('archivo', null, ['class'=>'form-control', 'type'=>'file', 'accept'=>'image/*']) !!}
         </div>
 
         <div class="form-group text-right">
-        <a href="{{url('/notas-de-prensa')}}">Regresar al listado de notas de prensa</a></div>
+        <a href="{{url('/archivos')}}">Regresar al listado de archivos</a></div>
         <input type="submit" value="Enviar" class="btn btn-success">
 {!! Form::close() !!}
 

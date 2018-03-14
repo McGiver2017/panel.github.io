@@ -12,4 +12,5 @@
         </ul>
     </div> 
     <br>
+<a href="{{ url('/notas-de-prensa/create') }}" class="btn btn-default">Registrar</a>
 </div>

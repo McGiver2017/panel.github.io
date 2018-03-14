@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class mensajedoc extends Model
 {
     protected $fillable = [
-        'nombres','apellidos', 'correo', 'tipo','asunto','mensaje'
+        'dni','nombres','apellidos','domicilio', 'correo','telefono', 'tipo', 'tipo_usuario', 'tipo_incidencia','detalle'
     ];
 }

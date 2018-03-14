@@ -110,7 +110,8 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                             </ul>
                         </li>
                         <li role="presentation" class="nav-item"><a href="{{ url('/transparencia') }}" class="btn btn-round">Transparencia</a></li>
-                        <li role="presentation" class="nav-item"><a href="{{ url('/reclamo-quejas') }}" class="btn btn-round">Relamos/Quejas</a></li>
+                        <li role="presentation" class="nav-item"><a href="{{ url('/convocatorias') }}" class="btn btn-round">Convocatorias</a></li>
+                        <li role="presentation" class="nav-item"><a href="{{ url('/reclamos') }}" class="btn btn-round">Reclamos</a></li>
                         <li role="presentation" class="nav-item">
                             <!-- Inicio Reloj -->
                             <button href="http://time.is/Pucallpa" id="time_is_link" rel="nofollow" style="font-size:12px" class="btn btn-round" disabled><span id="Pucallpa_z14d" ></span></button>
@@ -169,6 +170,11 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                                     <li>
                                         <a href="{{ url('/entidad') }}">
                                             Entidad
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/convocatorias') }}">
+                                            Convocatoria
                                         </a>
                                     </li>
                                     <li>

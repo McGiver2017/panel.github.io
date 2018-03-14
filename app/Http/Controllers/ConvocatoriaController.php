@@ -2,28 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\convocatoria;
 use App\archivo;
-use App\comunicado as tabla_principal;
 use Illuminate\Http\Request;
 
-class ComunicadoController extends Controller
+class ConvocatoriaController extends Controller
 {
-    private $ruta = "comunicados";
+    private $ruta = "convocatoria";
 
     public function generarHeader($opcion){
-        $datos = ['label' => 'Gestion de comunicados',
-        'descripcion' => 'Gestiona los comunicados del sistema.',
-        'ruta'=> $this->ruta,
-        'opcion' => $opcion
+        $datos = ['label' => 'Gestion de Convocatorias',
+            'descripcion' => 'Gestiona las Convocatorias del sistema.',
+            'ruta'=> $this->ruta,
+            'opcion' => $opcion
         ];
-    return $datos;
+        return $datos;
     }
     public function index()
     {
-        $lista = tabla_principal::get();
-        $archivos = archivo::get();
+        $lista = convocatoria::get();
         $datos = $this->generarHeader('mostrar');
-        return view($this->ruta.'.index',['datos'=> $datos,'listas' => $lista,'archivos' => $archivos]);
+        return view($this->ruta.'.index',['datos'=> $datos,'listas' => $lista]);
     }
 
     /**
@@ -33,9 +32,9 @@ class ComunicadoController extends Controller
      */
     public function create()
     {
-        $objeto = new tabla_principal();
-        $archivos = archivo::get();
+        $objeto = new convocatoria();
         $datos = $this->generarHeader('crear');
+        $archivos = archivo::get();
         return view($this->ruta.'.create',['objeto'=>$objeto,'datos'=> $datos,'archivos' => $archivos]);
     }
 
@@ -47,34 +46,32 @@ class ComunicadoController extends Controller
      */
     public function store(Request $request)
     {
-        $crear = tabla_principal::create($request->all());
+        $crear = convocatoria::create($request->all());
         if ($crear){
-            return redirect('comunicados');
+            return redirect('convocatoria');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\comunicados  $comunicados
+     * @param  \App\convocatoria  $convocatoria
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(convocatoria $convocatoria)
     {
-        $objeto = tabla_principal::find($id);
-        $datos = $this->generarHeader('crear');
-        return view($this->ruta.'.show',['objeto'=>$objeto,'datos'=> $datos]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\comunicados  $comunicados
+     * @param  \App\convocatoria  $convocatoria
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $objeto = tabla_principal::find($id);
+        $objeto = convocatoria::find($id);
         $datos = $this->generarHeader('editar');
         $archivos = archivo::get();
         return view($this->ruta.'.edit',['objeto'=>$objeto,'datos'=> $datos,'archivos' => $archivos]);
@@ -84,14 +81,14 @@ class ComunicadoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\comunicados  $comunicados
+     * @param  \App\convocatoria  $convocatoria
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $actualizar = tabla_principal::updateOrCreate(['id' => $id], $request->all());
+        $actualizar = convocatoria::updateOrCreate(['id' => $id], $request->all());
         if ($actualizar) {
-            return redirect('comunicados');
+            return redirect('convocatoria');
         } else {
             return redirect()->back();
         }
@@ -100,12 +97,23 @@ class ComunicadoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\comunicados  $comunicados
+     * @param  \App\convocatoria  $convocatoria
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $eliminar = tabla_principal::destroy($id);
-        return redirect('/comunicados');
+        $eliminar = convocatoria::destroy($id);
+        return redirect('/convocatoria');
+    }
+    public function cambiarEstado($id){
+        $convocatoria = convocatoria::find($id);
+        if ( $convocatoria->estado == 'activado'){
+            $convocatoria->estado = 'desactivado';
+        }
+        else{
+            $convocatoria->estado = 'activado';
+        }
+        $convocatoria->save();
+        return redirect('/convocatoria');
     }
 }

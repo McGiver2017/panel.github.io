@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\convocatoria;
 use Illuminate\Http\Request;
 use App\comunicado;
 use App\notasprensa;
@@ -72,7 +73,13 @@ class paginawebController extends Controller
         return view('paginaIndex.transparencia');
     }
     public function reclamo_quejas(){
-        return view('paginaIndex.reclamo-quejas');
+        $tipo_usuario = ['-- seleccione una opción --','Director / Subdirector' => 'Director / Subdirector', 'Docente' => 'Docente','Estudiante' => 'Estudiante','Padre de Familia' => 'Padre de Familia'];
+        $area = ['-- seleccione una opción --','Area de gestión administrativa' => 'Area de gestión administrativa'];
+        $tipo = ['-- seleccione una opción --','reclamo' => 'Reclamo', 'queja' => 'Queja','denuncia' => 'Denuncia','sol_info' => 'Solicitud de Información'];
+        return view('paginaIndex.reclamo-quejas',['tipo_usuario' => $tipo_usuario,'area' => $area,'tipo' => $tipo]);
     }
-
+    public function convocatoria(){
+        $listas = convocatoria::get();
+        return view('paginaIndex.convocatoria',['listas' => $listas]);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\notasprensa as tabla_principal;
 use App\notasprensa;
+use App\archivo;
 use Illuminate\Http\Request;
 
 class NotasprensaController extends Controller
@@ -34,7 +35,8 @@ class NotasprensaController extends Controller
     {
         $objeto = new notasprensa();
         $datos = $this->generarHeader('crear');
-        return view($this->ruta.'.create',['objeto'=>$objeto,'datos'=> $datos]);
+        $archivos = archivo::get();
+        return view($this->ruta.'.create',['objeto'=>$objeto,'datos'=> $datos,'archivos' => $archivos]);
     }
 
     /**
@@ -78,7 +80,8 @@ class NotasprensaController extends Controller
     {
         $objeto = notasprensa::find($id);
         $datos = $this->generarHeader('editar');
-        return view($this->ruta.'.edit',['objeto'=>$objeto,'datos'=> $datos]);
+        $archivos = archivo::get();
+        return view($this->ruta.'.edit',['objeto'=>$objeto,'datos'=> $datos,'archivos' => $archivos]);
     }
 
     /**

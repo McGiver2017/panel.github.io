@@ -35,7 +35,8 @@ Route::resource('/usuarios','UserController');
 Route::resource('/comunicados','ComunicadoController');
 Route::resource('/notas-de-prensa','NotasprensaController');
 Route::resource('/mensajes','MensajedocController');
-//
+Route::resource('/archivos','ArchivoController');
+Route::resource('/convocatoria','ConvocatoriaController');
 
 Route::get('/ugelcp', 'paginawebController@ugelcp');
 Route::get('/entidad', 'paginawebController@entidad');
@@ -55,4 +56,7 @@ Route::get('/remuneraciones', 'paginawebController@remuneraciones');
 Route::get('/tesoreria', 'paginawebController@tesoreria');
 Route::get('/oci', 'paginawebController@oci');
 Route::get('/transparencia', 'paginawebController@transparencia');
-Route::get('/reclamo-quejas', 'paginawebController@reclamo_quejas');
+Route::get('/reclamos', 'paginawebController@reclamo_quejas');
+Route::get('/convocatorias', 'paginawebController@convocatoria');
+
+Route::get('/convocatoria/estado/{id}', 'ConvocatoriaController@cambiarEstado');

@@ -45,6 +45,6 @@
         {!! Form::password('password_confirmation', ['class'=>'form-control','placeholder'=>'Vuelva a Ingresar su contraseña']) !!}
         </div>
         <div class="form-group text-right">        
-        <a href="{{url('/usuarios')}}">Regresar al listado de producto</a></div>
+        <a href="{{url('/usuarios')}}">Regresar al listado de usuarios</a></div>
         <input type="submit" value="Enviar" class="btn btn-success">
 {!! Form::close() !!}

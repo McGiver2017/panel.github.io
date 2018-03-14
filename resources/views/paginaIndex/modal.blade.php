@@ -12,7 +12,7 @@
                             <div class="col-md-12">
                                 <h5>Comunicado {{ $comunicado->id }}</h5>
                                 <p> <?php
-                                    echo substr($comunicado->descripcion,0,150).'...';
+                                    echo substr($comunicado->descripcion,0,300).'...';
                                     ?></p>
                             </div>
                         </div>

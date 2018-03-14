@@ -5,14 +5,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">{{ $objeto->asunto }}</h4>
+                    <h4 class="card-title">{{ $objeto->dni }}</h4>
                     <p class="category">De: {{ $objeto->nombres.' '.$objeto->apellidos }}</p>
                     <p class="category">Correo: {{ $objeto->correo }}</p>
                     <p class="category">Tipo: {{ $objeto->tipo }}</p>
                 </div>
                 <div class="card-body">
                     @php
-                    echo $objeto->mensaje;
+                    echo $objeto->detalle;
                     @endphp
                 </div>
 

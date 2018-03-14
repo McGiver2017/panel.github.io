@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                @include('quejas-reclamos.header',$datos)
+                @include('carga-de-archivos.header',$datos)
             </div>            
         </div>
     </div>
@@ -19,13 +19,9 @@
                     <thead>
                         <th data-field="state" data-checkbox="true"></th>
                         <th data-field="id" class="text-center">ID</th>
-                        <th data-field="dni" data-sortable="true">DNI</th>
-                        <th data-field="nombres" data-sortable="true">Nombres</th>
-                        <th data-field="apellidos" data-sortable="true">Apellidos</th>
-                        <th data-field="correo" data-sortable="true">Correo</th>
+                        <th data-field="descripcion" data-sortable="true">Descripcion</th>
+                        <th data-field="ruta" data-sortable="true">Ruta</th>
                         <th data-field="tipo" data-sortable="true">Tipo</th>
-                        <th data-field="telefono " data-sortable="true">Tel. Fijo / Celular</th>
-                        <th data-field="estado " data-sortable="true">Estado</th>
                         <th data-field="actions" class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
                     </thead>
                     <tbody>
@@ -33,13 +29,9 @@
                         <tr>
                             <td></td>
                             <td>{{ $lista->id }}</td>
-                            <td>{{ $lista->dni}}</td>
-                            <td>{{ $lista->nombres}}</td>
-                            <td>{{ $lista->apellidos}}</td>
-                            <td>{{ $lista->correo}}</td>
+                            <td>{{ $lista->descripcion}}</td>
+                            <td>{{ $lista->archivo}}</td>
                             <td>{{ $lista->tipo}}</td>
-                            <td>{{ $lista->telefono}}</td>
-                            <td>{{ $lista->estado}}</td>
                             <td></td>
                         </tr>
                         @endforeach
@@ -58,13 +50,29 @@
             '<a rel="tooltip" title="View" class="btn btn-link btn-info table-action view" href="javascript:void(0)">',
             '<i class="fa fa-image"></i>',
             '</a>',
+            '<a rel="tooltip" title="Edit" class="btn btn-link btn-warning table-action edit" href="javascript:void(0)">',
+            '<i class="fa fa-edit"></i>',
+            '</a>',
+            '<a rel="tooltip" title="Remove" class="btn btn-link btn-danger table-action remove" href="javascript:void(0)">',
+            '<i class="fa fa-remove"></i>',
+            '</a>'
         ].join('');
     }
 
     $().ready(function() {
         window.operateEvents = {
             'click .view': function(e, value, row, index) {
-                location.href ="/mensajes/"+row.id;
+                location.href ="/archivos/"+row.id;
+            },
+            'click .edit': function(e, value, row, index) {
+                location.href ="/archivos/"+row.id+"/edit";
+            },
+            'click .remove': function(e, value, row, index) {
+                console.log(row);
+                $table.bootstrapTable('remove', {
+                    field: 'id',
+                    values: [row.id]
+                });
             }
         };
 

@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group text-right">
-        <a href="{{url('/comunicados')}}">Regresar al listado de producto</a></div>
+        <a href="{{url('/comunicados')}}">Regresar al listado de comunicados</a></div>
         <input type="submit" value="Enviar" class="btn btn-success">
 {!! Form::close() !!}
 <script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>

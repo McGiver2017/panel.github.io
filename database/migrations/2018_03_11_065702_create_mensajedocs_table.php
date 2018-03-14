@@ -15,12 +15,16 @@ class CreateMensajedocsTable extends Migration
     {
         Schema::create('mensajedocs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('dni');
             $table->string('nombres');
             $table->string('apellidos');
+            $table->string('domicilio');
+            $table->string('telefono');
             $table->string('correo');
-            $table->enum('tipo',['reclamo','queja']);
-            $table->string('asunto');
-            $table->string('mensaje',250);
+            $table->string('tipo');
+            $table->string('tipo_usuario');
+            $table->string('tipo_incidencia');
+            $table->string('detalle',250);
             $table->enum('estado',['enviado','leido','respondido'])->default('enviado');
             $table->timestamps();
         });

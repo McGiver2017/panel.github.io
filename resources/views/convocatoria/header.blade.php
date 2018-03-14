@@ -10,7 +10,7 @@
             <li class="breadcrumb-item"><a href="#!">{{ $opcion}}</a>
             </li>
         </ul>
-    </div>
+    </div> 
     <br>
-    <a href="{{ url('/usuarios/create') }}" class="btn btn-default">Registrar</a>
+<a href="{{ url('/convocatoria/create') }}" class="btn btn-default">Registrar</a>
 </div>

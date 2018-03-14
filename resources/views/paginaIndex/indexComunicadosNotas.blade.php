@@ -43,7 +43,9 @@
                                 </div>
                                 <div class="col-md-6">                                    
                                     <p class="card-description">
-                                    {{$nota->cuerpo}}
+                                        <?php
+                                        echo $nota->cuerpo;
+                                        ?>
                                     </p>
                                 </div>
                             </div>

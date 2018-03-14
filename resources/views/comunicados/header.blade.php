@@ -12,4 +12,5 @@
         </ul>
     </div> 
     <br>
+<a href="{{ url('/comunicados/create') }}" class="btn btn-default">Registrar</a>
 </div>
