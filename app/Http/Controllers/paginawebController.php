@@ -15,6 +15,16 @@ class paginawebController extends Controller
         $comunicadoModal = comunicado::paginate(3);
         return view('paginaIndex.indexComunicadosNotas',['comunicados' => $comunicados,'notas' => $notas,'comunicadosModal' => $comunicadoModal]);
     }
+    public function  showComunicado($id){
+        $objeto = comunicado::find($id);
+        $comunicados = comunicado::orderBy('id', 'DESC')->get();
+        return view('paginaIndex.show.comunicado',['objeto'=>$objeto,'comunicados'=>$comunicados]);
+    }
+    public function  showNotas($id){
+        $objeto = notasprensa::find($id);
+        $notas = notasprensa::orderBy('id', 'DESC')->get();
+        return view('paginaIndex.show.notas-de-prensa',['objeto'=>$objeto,'notasDePrensa'=>$notas]);
+    }
     public function ugelcp(){
         return view('paginaIndex.ugelcp');
     }

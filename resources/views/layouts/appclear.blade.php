@@ -20,13 +20,34 @@
     <link href="{{ asset('paper-kit2/assets/css/demo.css') }}" rel="stylesheet" />
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('paper-kit2/assets/css/nucleo-icons.css') }}" rel="stylesheet">
-    
+    <style>
+        .card[data-color="black"]{
+            background: #555555
+        }
+        .bg-danger{
+            background-color: #D55C36!important;
+        }
+        .alto-definido{
+            height: 180px;
+        }
+        .alto-definido-nota{
+            height: 225px;
+        }
+        .cabecera-np{
+            background: red;
+        }
+        .card-body[data-color="black"]{
+            background: #555555
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="row mt-2 mb-2">
-            <div class="col-md-6 text-center">
-                <span><strong>
+        <div id="pre-header" class="" >
+            <div class="row mt-2 mb-2 ">
+                <div class="col-md-6 ">
+                    <div class="container">
+                    <span><strong>
 
                         <script language="JavaScript" type="text/javascript">
 <!--
@@ -51,9 +72,10 @@ if (lm_day<10){
 document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
 // -->
 </script>
-                    </strong>Copyright Ugel - Coronel Portillo 2018 - Oficina de Sistemas</span>
-            </div>
-            <div class="col-md-6 text-center">
+                    </strong></span>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
                 <span><strong>&quot;AÑO DEL DIÁLOGO Y LA RECONCILIACIÓN NACIONAL&quot; -</strong>
                  <script>
                     var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
@@ -61,12 +83,13 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                     document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
                 </script>
                 </span>
+                </div>
+            </div>
+            <div class="d-flex">
+                <img src="{{ asset('ugel/img/logo2018.png')}}" class="img-fluid d-flex m-auto" />
             </div>
         </div>
-        <div class="d-flex">
-            <img src="{{ asset('ugel/img/logo2018.png')}}" class="img-fluid d-flex m-auto" />
-        </div>
-        <nav class="navbar navbar-expand-md bg-danger ">
+        <nav id="header" class="navbar navbar-expand-md bg-danger">
             <div class="container">
                 <a class="navbar-brand" href="/">UGEL DE CORONEL PORTILLO</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,19 +101,19 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                     <li role="presentation" class="nav-item active"><a href="{{ url('/') }}" class="btn btn-round">Inicio</a></li>
-                    
+
                         <li class="nav-item dropdown">
-                            <button href="#paper-kit" class="dropdown-toggle btn btn-round" data-toggle="dropdown" aria-expanded="false">DATOS <b class="caret"></b></button>
+                            <button href="#paper-kit" class="dropdown-toggle btn btn-round" data-toggle="dropdown" aria-expanded="false">INSTITUCIONAL <b class="caret"></b></button>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-header">Lista de opciones</div>
                                 <a class="dropdown-item" href="{{ url('/ugelcp') }}">UGEL CP</a>
                                 <a class="dropdown-item" href="{{ url('/entidad') }}">Entidad</a>
                                 <a class="dropdown-item" href="{{ url('/funcionarios') }}">Funcionarios</a>
                             </ul>
-                        </li>                        
+                        </li>
                         <li class="nav-item dropdown">
-                            <button href="#paper-kit" class="dropdown-toggle btn btn-round" data-toggle="dropdown" aria-expanded="false">OFICINAS <b class="caret"></b></button>
-                            
+                            <button href="#paper-kit" class="dropdown-toggle btn btn-round" data-toggle="dropdown" aria-expanded="false">ORGANIZACIÓN <b class="caret"></b></button>
+
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-header">Lista de opciones</div>
                                 <a class="dropdown-item" href="{{ url('/direccion') }}">Dirección</a>
@@ -106,7 +129,7 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                                 <a class="dropdown-item" href="{{ url('/remuneraciones') }}">Remuneraciones</a>
                                 <a class="dropdown-item" href="{{ url('/tesoreria') }}">Tesoreria</a>
                                 <a class="dropdown-item" href="{{ url('/oci') }}">Oficina de Control Interno</a>
-                                
+
                             </ul>
                         </li>
                         <li role="presentation" class="nav-item"><a href="{{ url('/transparencia') }}" class="btn btn-round">Transparencia</a></li>
@@ -122,12 +145,12 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                             </script><!-- Fin Reloj -->
                         </li>
                     </ul>
-                    
+
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container bordes">        
+    <div id="contenido" class="container bordes">
         @yield('content')
     </div>
     <footer class="footer footer-black footer-big">
@@ -215,10 +238,7 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                             <div class="links">
                                 <ul class="stacked-links">
                                     <li>
-                                        <h4>13.723<br> <small>accounts</small></h4>
-                                    </li>
-                                    <li>
-                                        <h4>55.234<br> <small>downloads</small></h4>
+                                        <h4>50<br> <small>Visitas</small></h4>
                                     </li>
 
                                 </ul>
@@ -228,25 +248,25 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
                     <hr>
                     <div class="copyright">
                         <div class="pull-left">
-                            © <script>document.write(new Date().getFullYear())</script>2018 Creative Tim, made with love
+                            © <script>document.write(new Date().getFullYear())</script> Copyright Ugel - Coronel Portillo 2018 - Oficina de Sistemas
                         </div>
                         <div class="links pull-right">
                             <ul>
                                 <li>
-                                    <a href="#paper-kit">
-                                        Company Policy
+                                    <a href="{{ url('/') }}">
+                                        Home
                                     </a>
                                 </li>
                                 |
                                 <li>
-                                    <a href="#paper-kit">
-                                        Terms
+                                    <a href="{{ url('/transparencia') }}">
+                                        Transparencia
                                     </a>
                                 </li>
                                 |
                                 <li>
-                                    <a href="#paper-kit">
-                                        Privacy
+                                    <a href="{{ url('/convocatorias') }}">
+                                        Convocatoria
                                     </a>
                                 </li>
                             </ul>
@@ -262,12 +282,34 @@ document.write("Ultima actualización " + lm_day+'/'+lm_month+'/'+lm_year);
 @yield('script')
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a9e31bfcfa3a1e5"></script>
+<style>
+    .ocultar{
+        display: none;
+    }
+    .mostrar{
+        display: block;
+    }
+    .margen-con-menu{
+        margin-top: 155px;
+    }
+</style>
 <script>
     $('ul.nav li.dropdown').hover(function() {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
   }, function() {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
   });
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() > 80) {
+            $('#pre-header').addClass('ocultar');
+            $('#header').addClass('fixed-top');
+            $('#contenido').addClass('margen-con-menu')
+        } else {
+            $('#pre-header').removeClass('ocultar');
+            $('#header').removeClass('fixed-top');
+            $('#contenido').removeClass('margen-con-menu')
+        }
+    });
 </script>
 </body>
 </html>

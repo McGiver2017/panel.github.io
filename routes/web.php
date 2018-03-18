@@ -60,3 +60,7 @@ Route::get('/reclamos', 'paginawebController@reclamo_quejas');
 Route::get('/convocatorias', 'paginawebController@convocatoria');
 
 Route::get('/convocatoria/estado/{id}', 'ConvocatoriaController@cambiarEstado');
+
+//shows comunicados and Notas de Prensas
+Route::get('/comunicado/{id}', 'paginawebController@showComunicado');
+Route::get('/notasdeprensa/{id}', 'paginawebController@showNotas');

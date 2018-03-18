@@ -23970,3 +23970,7 @@ ul {
   padding-bottom: 20px !important;
 }
 
+.card[data-color="black"] {
+  background: rgba(16, 15, 17, 0.22);
+}
+
