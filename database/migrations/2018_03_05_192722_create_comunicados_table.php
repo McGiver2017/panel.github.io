@@ -15,6 +15,7 @@ class CreateComunicadosTable extends Migration
     {
         Schema::create('comunicados', function (Blueprint $table) {
             $table->increments('id');
+            $table->longText('titular');
             $table->longText('descripcion');
             $table->string('fecha');
             $table->string('ver-mas')->nullable();

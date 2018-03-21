@@ -10,6 +10,7 @@
                 </div>
                 <div class="card-body">
                     @php
+                    echo $objeto->titular.'<br>';
                     echo $objeto->cuerpo;
                     @endphp
                     <p class="card-description"><img src="{{$objeto->imagen}}" alt="Rounded Image" class="img-rounded img-responsive">

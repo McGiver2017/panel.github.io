@@ -50,6 +50,7 @@ class NotasprensaController extends Controller
         $imagen = $request->file('imagen');
         tabla_principal::create([
             'titulo' => $request->input('titulo'),
+            'titular' => $request->input('titular'),
             'cuerpo' => $request->input('cuerpo'),
             'fecha' => $request->input('fecha'),
             'imagen' => $imagen->store('notas','public')
@@ -104,6 +105,7 @@ class NotasprensaController extends Controller
         }
         tabla_principal::updateOrCreate(['id' => $id],[
             'titulo' => $request->input('titulo'),
+            'titular' => $request->input('titular'),
             'cuerpo' => $request->input('cuerpo'),
             'fecha' => $request->input('fecha'),
             'imagen' => $guardar

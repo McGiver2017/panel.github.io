@@ -19,6 +19,7 @@
                     <thead>
                         <th data-field="state" data-checkbox="true"></th>
                         <th data-field="id" class="text-center">ID</th>
+                        <th data-field="titular" data-sortable="true">Titular</th>
                         <th data-field="titulo" data-sortable="true">Titulo</th>
                         <th data-field="cuerpo" data-sortable="true">Cuerpo</th>
                         <th data-field="fecha" data-sortable="true">Fecha</th>
@@ -29,6 +30,7 @@
                         <tr>
                             <td></td>
                             <td>{{ $lista->id }}</td>
+                            <td>{{ $lista->titular }}</td>
                             <td>{{ $lista->titulo}}</td>
                             <td>{{ $lista->cuerpo}}</td>
                             <td>{{ $lista->fecha}}</td>

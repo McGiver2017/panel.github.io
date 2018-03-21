@@ -21,6 +21,7 @@
                         <th data-field="state" data-checkbox="true"></th>
                         <th data-field="id" class="text-center">ID</th>
                         <th data-field="fecha" data-sortable="true">Fecha</th>
+                        <th data-field="titular" data-sortable="true">Titular</th>
                         <th data-field="descripcion" data-sortable="true">Descripcion</th>
                         <th data-field="actions" class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatter">Actions</th>
                         </thead>
@@ -30,6 +31,7 @@
                                 <td></td>
                                 <td>{{ $lista->id }}</td>
                                 <td>{{ $lista->fecha}}</td>
+                                <td>{{ $lista->titular}}</td>
                                 <td>{{ $lista->descripcion}}</td>
                                 <td></td>
                             </tr>

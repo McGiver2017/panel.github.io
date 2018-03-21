@@ -49,7 +49,7 @@
                                 <div class="col-md-12">
                                     <p class="text-justify">
                                         <?php
-                                        echo substr($objeto->cuerpo,0,150);
+                                        echo substr($objeto->titular,0,150);
                                         ?>
                                     </p>
                                     <a class="link-info" href="{{ url('notasdeprensa/'.$objeto->id) }}">ver mas</a>

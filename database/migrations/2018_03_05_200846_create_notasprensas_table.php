@@ -16,6 +16,7 @@ class CreateNotasprensasTable extends Migration
         Schema::create('notasprensas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
+            $table->string('titular');
             $table->longText('cuerpo');
             $table->string('fecha');
             $table->string('imagen');

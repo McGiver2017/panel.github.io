@@ -16,7 +16,7 @@
                         </div>
                         <div class="text-justify pr-4 card-body alto-definido">
                             @php
-                                echo substr($comunicado->descripcion,0,150).'...';
+                                echo substr($comunicado->titular,0,150).'...';
                             @endphp
                             <a class="link-info" href="{{ url('comunicado/'.$comunicado->id) }}">ver mas</a>
                         </div>

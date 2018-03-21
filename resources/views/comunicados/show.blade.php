@@ -10,6 +10,7 @@
                 </div>
                 <div class="card-body">
                     @php
+                    echo $objeto->titular.'<br>';
                     echo $objeto->descripcion;
                     @endphp
                 </div>

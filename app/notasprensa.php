@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class notasprensa extends Model
 {
     protected $fillable = [
-        'titulo','cuerpo', 'fecha', 'imagen','ver-mas'
+        'titulo','titular','cuerpo', 'fecha', 'imagen','ver-mas'
     ];
     public function getImagenAttribute( $imagen ){
         if(!$imagen || starts_with($imagen,'http')){

@@ -25,6 +25,14 @@
         </div>
         <div class="form-group has-label">
         <label>
+            Titular
+            <star class="star">*</star>
+        </label>
+        {!! Form::text('titular', $objeto->titular, ['class'=>'form-control','placeholder'=>'Ingrese un titular para la nota de prensa...']) !!}
+
+        </div>
+        <div class="form-group has-label">
+        <label>
             Cuerpo
             <star class="star">*</star>
         </label>

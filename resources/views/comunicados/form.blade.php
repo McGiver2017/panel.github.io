@@ -17,6 +17,14 @@
 @endif
         <div class="form-group has-label">
         <label>
+            Titular
+            <star class="star">*</star>
+        </label>
+        {!! Form::textarea('titular', $objeto->titular, ['class'=>'form-control','placeholder'=>'Ingrese un titular para el comunicado...','id'=>'titular']) !!}
+
+        </div>
+<div class="form-group has-label">
+        <label>
             Descripción
             <star class="star">*</star>
         </label>
