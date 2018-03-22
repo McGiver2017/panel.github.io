@@ -21,7 +21,7 @@
             Descripción
             <star class="star">*</star>
         </label>
-            {!! Form::text('descripcion', $objeto->descripcion, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...']) !!}
+            {!! Form::text('descripcion', $objeto->descripcion, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...','required']) !!}
         </div>
         <div class="form-group has-label">
             <label>

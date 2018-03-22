@@ -21,7 +21,7 @@ class NotasprensaController extends Controller
     }
     public function index()
     {
-        $lista = tabla_principal::get();
+        $lista = tabla_principal::orderBy('id', 'DESC')->get();
         $datos = $this->generarHeader('mostrar');
         return view($this->ruta.'.index',['datos'=> $datos,'listas' => $lista]);
     }
@@ -48,12 +48,17 @@ class NotasprensaController extends Controller
     public function store(Request $request)
     {
         $imagen = $request->file('imagen');
+        $guardar = null;
+        if ($imagen){
+            $guardar = $imagen->store('notas','public');
+        }
+        $imagen = $request->file('imagen');
         tabla_principal::create([
             'titulo' => $request->input('titulo'),
             'titular' => $request->input('titular'),
             'cuerpo' => $request->input('cuerpo'),
             'fecha' => $request->input('fecha'),
-            'imagen' => $imagen->store('notas','public')
+            'imagen' => $guardar
         ]);
         return redirect('/notas-de-prensa');
     }

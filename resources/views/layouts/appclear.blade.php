@@ -28,7 +28,7 @@
             background-color: #D55C36!important;
         }
         .alto-definido{
-            height: 180px;
+            height: 100px;
         }
         .alto-definido-nota{
             height: 225px;
@@ -38,6 +38,10 @@
         }
         .card-body[data-color="black"]{
             background: #555555
+        }
+        .modal-body {
+            padding: 0px 10px;
+            color: #000;
         }
     </style>
 </head>

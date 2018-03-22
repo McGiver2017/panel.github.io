@@ -18,6 +18,7 @@ class CreateComunicadosTable extends Migration
             $table->longText('titular');
             $table->longText('descripcion');
             $table->string('fecha');
+            $table->string('imagen');
             $table->string('ver-mas')->nullable();
             $table->timestamps();
         });

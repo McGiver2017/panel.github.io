@@ -20,7 +20,7 @@
             Titulo
             <star class="star">*</star>
         </label>
-        {!! Form::text('titulo', $objeto->titulo, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...']) !!}
+        {!! Form::text('titulo', $objeto->titulo, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...','required']) !!}
 
         </div>
         <div class="form-group has-label">
@@ -28,7 +28,7 @@
             Titular
             <star class="star">*</star>
         </label>
-        {!! Form::text('titular', $objeto->titular, ['class'=>'form-control','placeholder'=>'Ingrese un titular para la nota de prensa...']) !!}
+        {!! Form::text('titular', $objeto->titular, ['class'=>'form-control','placeholder'=>'Ingrese un titular para la nota de prensa...','required']) !!}
 
         </div>
         <div class="form-group has-label">
@@ -36,14 +36,14 @@
             Cuerpo
             <star class="star">*</star>
         </label>
-            {!! Form::textarea('cuerpo', $objeto->cuerpo, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...']) !!}
+            {!! Form::textarea('cuerpo', $objeto->cuerpo, ['class'=>'form-control','placeholder'=>'Ingrese su cuerpo de nota de prensa...','required']) !!}
         </div>
         <div class="form-group has-label">
             <label>
                 Fecha
                 <star class="star">*</star>
             </label>
-            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
+            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...','required']) !!}
         </div>
         <div class="form-group has-label">
             <label>

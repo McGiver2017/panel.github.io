@@ -20,7 +20,7 @@
             Titular
             <star class="star">*</star>
         </label>
-        {!! Form::textarea('titular', $objeto->titular, ['class'=>'form-control','placeholder'=>'Ingrese un titular para el comunicado...','id'=>'titular']) !!}
+        {!! Form::textarea('titular', $objeto->titular, ['class'=>'form-control','placeholder'=>'Ingrese un titular para el comunicado...','id'=>'titular','required','maxlength'=>'150']) !!}
 
         </div>
 <div class="form-group has-label">
@@ -28,7 +28,7 @@
             Descripción
             <star class="star">*</star>
         </label>
-        {!! Form::textarea('descripcion', $objeto->descripcion, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...','id'=>'descripcion']) !!}
+        {!! Form::textarea('descripcion', $objeto->descripcion, ['class'=>'form-control','placeholder'=>'Ingrese su nombre...','id'=>'descripcion','required']) !!}
 
         </div>
         <div class="form-group has-label">
@@ -36,7 +36,14 @@
                 Fecha
                 <star class="star">*</star>
             </label>
-            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...']) !!}
+            {!! Form::text('fecha', $objeto->fecha, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...','required']) !!}
+        </div>
+        <div class="form-group has-label">
+            <label>
+                Ruta de imagen
+                <star class="star">*</star>
+            </label>
+            {!! Form::file('imagen', null, ['class'=>'form-control','placeholder'=>'Ingrese la fecha personalizada...', 'type'=>'file', 'accept'=>'image/*']) !!}
         </div>
 
         <div class="form-group text-right">

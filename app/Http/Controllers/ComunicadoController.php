@@ -20,7 +20,7 @@ class ComunicadoController extends Controller
     }
     public function index()
     {
-        $lista = tabla_principal::get();
+        $lista = tabla_principal::orderBy('id', 'DESC')->get();
         $archivos = archivo::get();
         $datos = $this->generarHeader('mostrar');
         return view($this->ruta.'.index',['datos'=> $datos,'listas' => $lista,'archivos' => $archivos]);
@@ -47,10 +47,19 @@ class ComunicadoController extends Controller
      */
     public function store(Request $request)
     {
-        $crear = tabla_principal::create($request->all());
-        if ($crear){
-            return redirect('comunicados');
+        $imagen = $request->file('imagen');
+        $guardar = null;
+        if ($imagen){
+            $guardar = $imagen->store('comunicados','public');
         }
+        $imagen = $request->file('imagen');
+        tabla_principal::create([
+            'titular' => $request->input('titular'),
+            'descripcion' => $request->input('descripcion'),
+            'fecha' => $request->input('fecha'),
+            'imagen' => $guardar
+        ]);
+        return redirect('/comunicados');
     }
 
     /**
@@ -89,12 +98,22 @@ class ComunicadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $actualizar = tabla_principal::updateOrCreate(['id' => $id], $request->all());
-        if ($actualizar) {
-            return redirect('comunicados');
-        } else {
-            return redirect()->back();
+        $imagen = $request->file('imagen');
+        $guardar = null;
+        $tabla = tabla_principal::find($id);
+        if ($imagen){
+            $guardar = $imagen->store('comunicados','public');
         }
+        else{
+            $guardar = $tabla->imagen;
+        }
+        tabla_principal::updateOrCreate(['id' => $id],[
+            'titular' => $request->input('titular'),
+            'descripcion' => $request->input('descripcion'),
+            'fecha' => $request->input('fecha'),
+            'imagen' => $guardar
+        ]);
+        return redirect('comunicados');
     }
 
     /**

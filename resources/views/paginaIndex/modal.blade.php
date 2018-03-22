@@ -7,15 +7,8 @@
             </div>
             <div class="modal-body">
                 @foreach($comunicadosModal as $comunicado)
-                    <div class="instruction">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h5>Comunicado {{ $comunicado->id }}</h5>
-                                <p> <?php
-                                    echo substr($comunicado->descripcion,0,300).'...';
-                                    ?></p>
-                            </div>
-                        </div>
+                    <div>
+                        <img src="{{$comunicado->imagen}}" alt="Rounded Image" class="img-rounded img-responsive">
                     </div>
                 @endforeach
             </div>

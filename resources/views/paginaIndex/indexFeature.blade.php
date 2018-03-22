@@ -2,15 +2,6 @@
     <div class="section text-center ">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">¿QUÉ ES UNA UGEL?</h2>
-                    <h5>La Unidad de Gestión Educativa Local -UGEL de Ucayali es una instancia de ejecución descentralizada del Gobierno Regional con autonomía en el ámbito de su competencia. Su jurisdicción territorial es la provincia, pudiendo ser modificada bajo criterios de dinámica social, afinidad geográfica, cultural o económica y facilidades de comunicación, de acuerdo al procedimiento establecido en las normas específicas sobre la materia.</h5>
-                    <br>
-
-                </div>
-            </div>
-            <br><br>
-            <div class="row">
                 <div class="col-md-3">
                     <div class="card card-blog" data-color="black" >
                         <div class="info">

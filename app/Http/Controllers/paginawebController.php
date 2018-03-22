@@ -10,9 +10,9 @@ use App\notasprensa;
 class paginawebController extends Controller
 {
     public function index(){
-        $comunicados = comunicado::paginate(8);
-        $notas = notasprensa::paginate(8);
-        $comunicadoModal = comunicado::paginate(3);
+        $comunicados = comunicado::orderBy('id', 'DESC')->paginate(8);
+        $notas = notasprensa::orderBy('id', 'DESC')->paginate(8);
+        $comunicadoModal = comunicado::orderBy('id', 'DESC')->get()->take(1);
         return view('paginaIndex.indexComunicadosNotas',['comunicados' => $comunicados,'notas' => $notas,'comunicadosModal' => $comunicadoModal]);
     }
     public function  showComunicado($id){
