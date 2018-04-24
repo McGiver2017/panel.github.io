@@ -21,19 +21,3 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(App\comunicado::class, function (Faker $faker)
-{
-    return [
-        'descripcion' => $faker->realText(random_int(20,160)), 
-        'fecha' => 'Puc, 01 de Marzo del 2018.', 
-    ];
-});
-$factory->define(App\notasprensa::class, function (Faker $faker)
-{
-    return [
-        'titulo' => 'NOTA DE PRENSA N° 002-2018-DREU-UGEL.CP/OII',
-        'cuerpo'  => $faker->realText(random_int(20,160)),
-        'fecha'  => 'Puc, 01 de Marzo del 2018.', 
-        'imagen' => $faker->imageUrl(250,160)
-    ];
-});
